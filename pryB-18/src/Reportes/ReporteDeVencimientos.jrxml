@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name=" ReporteDeVencimientos" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="94d657e1-9f24-4bac-900b-9689da26972b">
+	<property name="ireport.zoom" value="1.3310000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F5F5DC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="9de4a384-4a1b-45a3-b90c-6e4b956687d0"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM vista_prestamos_estudiantes;]]>
+	</queryString>
+	<field name="usuario_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prestamo_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_prestamo" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_vencimiento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado_nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="libro_titulo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="47" y="0" width="112" height="79" uuid="603591f9-a54d-40d6-b39c-258a6ff17090"/>
+				<imageExpression><![CDATA["D:\\Lenovo\\UNIVERSIDAD\\2023 - Marzo\\INTEGRADOR I\\proyecto2\\AvanceFinal\\pryBiblioteca-13-07\\pryBiblioteca-13-07\\pryBiblioteca-orig\\pryB-18\\src\\img\\logoJME.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="159" y="0" width="486" height="79" uuid="fffc4123-e3fb-43ee-b07c-2ca5c23d661d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE ALUMNOS CON VENCIMIENTO DE PRÉSTAMOS]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="701" y="0" width="100" height="20" uuid="63148370-3abb-4577-baac-3a553cd0b4a0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="670" y="20" width="31" height="20" uuid="2171ea83-6cc6-48ef-b41c-129c2730c464"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="701" y="20" width="100" height="20" uuid="940fabb5-5e5e-4411-9f0c-75e37938ade3"/>
+				<text><![CDATA[20602514642]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="40" width="31" height="20" uuid="2696f650-b086-47fb-966e-2ecba355a1ba"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIIU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="701" y="40" width="100" height="20" uuid="f3f0b646-68c6-4b1c-b1a0-f5ca91e89557"/>
+				<text><![CDATA[80210]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="702" y="59" width="100" height="20" uuid="6afdc87e-7ece-4a98-a0ff-8fa734a2fdaf"/>
+				<text><![CDATA[San Borja 07]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="59" width="31" height="20" uuid="d259c97f-147a-4913-9215-f9ea53e0d968"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UGEL:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="200" height="25" uuid="ad61709f-3ac0-4f8c-b5a9-21c02666edaa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Algerian" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.E. JOSE MARÍA EGUREN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="5" width="49" height="20" uuid="d0488c25-1292-40fd-afe1-7489c71579c7"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="5" width="170" height="20" uuid="a67dfa40-d15a-4a7b-be75-3d5f528f6b77"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ Av Manuel de la Fuente Chavez 506]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="596" y="5" width="54" height="20" uuid="18fea6a4-b3ab-495a-ac35-3836e91bc589"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="650" y="5" width="68" height="20" uuid="b00e038a-b803-4a8d-a0d9-834762ab6d58"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ (01) 4182180]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="5" width="43" height="20" uuid="a1de7bfa-e4a1-4098-bc5c-1bc1e116ad8b"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Distrito:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="5" width="100" height="20" uuid="9d4c4521-4dfa-4892-a20b-6d318312b41a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Barranco 15063]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement style="table_CH" x="0" y="0" width="62" height="20" uuid="0461a090-7bb0-4fa2-9b81-b2799ce60305"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID USUARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_CH" x="62" y="0" width="73" height="20" uuid="3fa9f460-e492-4393-b5e0-f59800642d36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PRÉSTAMO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_CH" x="135" y="0" width="88" height="20" uuid="d7640bc7-f36a-47ab-b4d0-39c9b63e4322"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_CH" x="223" y="0" width="100" height="20" uuid="1526ecef-a273-4f74-9841-20154c3573bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_CH" x="323" y="0" width="100" height="20" uuid="f9bdc43e-56f6-4a28-8614-7157153c170a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_CH" x="423" y="0" width="100" height="20" uuid="1247eb6a-ae9f-48bd-8d28-158530f32949"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LIBRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_CH" x="523" y="0" width="100" height="20" uuid="560dbbfd-b174-45e7-9305-cde9f3348aa4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[F PRÉSTAMO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_CH" x="623" y="0" width="89" height="20" uuid="076b2144-424f-4af0-b602-a501adbd9019"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[F VENCIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_CH" x="712" y="0" width="90" height="20" uuid="41da5770-9ebb-4465-ab02-f1a6fb2801b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement style="table_TH" x="0" y="0" width="62" height="32" uuid="87dc6f93-c5e7-4de2-b048-e07339b6bef0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{usuario_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TH" x="62" y="0" width="73" height="32" uuid="79a45892-656d-4157-b7b2-b1a64ab24605"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{prestamo_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TH" x="135" y="0" width="88" height="32" uuid="cae0b5ed-85e6-4228-89f8-7a2563d0ffde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TH" x="223" y="0" width="100" height="32" uuid="4ec12a4f-9d61-4d0a-8f0c-cd8ec34c10f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TH" x="323" y="0" width="100" height="32" uuid="c4fe56c7-41a3-4d65-af3f-0e0444d4bc5a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TH" x="423" y="0" width="100" height="32" uuid="454445fa-e1eb-41f1-a302-e0c11476c4ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{libro_titulo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="table_TH" x="523" y="0" width="100" height="32" uuid="07f37190-b91d-4070-a15d-1aac738ea3b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fecha_prestamo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="table_TH" x="623" y="0" width="89" height="32" uuid="3f5f1782-cdc6-444b-9f16-da39fab27483"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fecha_vencimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TH" x="712" y="0" width="90" height="32" uuid="2c44df91-03de-4252-bd51-0a2e614dffd7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estado_nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="343" y="0" width="80" height="20" uuid="3dfb8291-3cc2-4ab2-83ac-580a2900e4ff"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="423" y="0" width="40" height="20" uuid="2408e09f-cac6-4970-a620-b9ebbc319726"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>
